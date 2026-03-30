@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./JavaScript/background.js"></script>
+    <script src="./JavaScript/email.js"></script>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>ETIOS</title>
+  </head>
+  <body>
+    <canvas id="network-bg"></canvas>
+    <div class="">
+      <header class="absolute inset-x-0 top-0 z-50">
+        <nav
+          aria-label="Global"
+          class="flex items-center justify-between p-6 lg:px-8"
+        >
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">ETIOS</span>
+              <img
+                src="images/logo.png"
+                alt="ETIOS"
+                class="h-15 w-auto bg-slate-800"
+              />
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              command="show-modal"
+              commandfor="mobile-menu"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                data-slot="icon"
+                aria-hidden="true"
+                class="size-6"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#" class="text-sm/6 font-semibold text-gray-900"
+              >Product</a
+            >
+            <a href="#" class="text-sm/6 font-semibold text-gray-900"
+              >Features</a
+            >
+            <a href="#" class="text-sm/6 font-semibold text-gray-900"
+              >Marketplace</a
+            >
+            <a href="#" class="text-sm/6 font-semibold text-gray-900"
+              >Company</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-sm/6 font-semibold text-gray-900"
+              >Log in <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </nav>
+
+        <el-dialog>
+          <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+            <div tabindex="0" class="fixed inset-0 focus:outline-none">
+              <el-dialog-panel
+                class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+              >
+                <div class="flex items-center justify-between">
+                  <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+                    <img
+                      src="images/logo.png"
+                      alt="ETIOS"
+                      class="h-10 w-auto bg-slate-800"
+                    />
+                  </a>
+                  <button
+                    type="button"
+                    command="close"
+                    commandfor="mobile-menu"
+                    class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                  >
+                    <span class="sr-only">Close menu</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      data-slot="icon"
+                      aria-hidden="true"
+                      class="size-6"
+                    >
+                      <path
+                        d="M6 18 18 6M6 6l12 12"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >Product</a
+                      >
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >Features</a
+                      >
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >Marketplace</a
+                      >
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >Company</a
+                      >
+                    </div>
+                    <div class="py-6">
+                      <a
+                        href="#"
+                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                        >Log in</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </el-dialog-panel>
+            </div>
+          </dialog>
+        </el-dialog>
+      </header>
+      <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="mx-auto max-w-2xl py-24 sm:py-48 lg:py-56">
+          <div class="text-center">
+            <h1
+              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+            >
+              ETIOS
+            </h1>
+            <h2
+              class="text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
+            >
+              Engineering Technology & Intelligent Operations Solutions
+            </h2>
+            <p
+              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+            >
+              Helping organizations transform operations through data,
+              automation and modern engineering technologies.
+            </p>
+
+            <div class="bg-white-500 mt-8">
+              <h3>Our Website is Under Construction!</h3>
+              <p>We're working hard to finish the development of this site.</p>
+            </div>
+
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+              <!-- Contact Button -->
+              <button
+                id="openContactModal"
+                class="rounded-md bg-slate-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-slate-500"
+              >
+                Contact Us
+              </button>
+
+              <!-- Modal -->
+              <div
+                id="contactModal"
+                class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 px-4"
+              >
+                <div
+                  class="relative w-full max-w-2xl rounded-2xl border border-white/10 bg-neutral-900 shadow-2xl"
+                >
+                  <button
+                    id="closeContactModal"
+                    class="absolute right-4 top-4 text-2xl text-neutral-400 hover:text-white"
+                    type="button"
+                  >
+                    &times;
+                  </button>
+
+                  <div class="p-8">
+                    <h2 class="mb-6 text-3xl font-bold text-white">
+                      Contact Us
+                    </h2>
+
+                    <form
+                      id="contactForm"
+                      action="https://formspree.io/f/mjgpwvvy"
+                      method="POST"
+                      class="space-y-6"
+                    >
+                      <input
+                        type="hidden"
+                        name="_subject"
+                        value="New inquiry from ETIOS website"
+                      />
+                      <input type="text" name="_gotcha" class="hidden" />
+
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Full Name"
+                        required
+                        class="w-full rounded-xl border border-white/10 bg-neutral-800 px-4 py-3 text-white"
+                      />
+
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                        class="w-full rounded-xl border border-white/10 bg-neutral-800 px-4 py-3 text-white"
+                      />
+
+                      <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        class="w-full rounded-xl border border-white/10 bg-neutral-800 px-4 py-3 text-white"
+                      />
+
+                      <textarea
+                        name="message"
+                        rows="5"
+                        placeholder="Your message"
+                        required
+                        class="w-full rounded-xl border border-white/10 bg-neutral-800 px-4 py-3 text-white"
+                      ></textarea>
+
+                      <button
+                        id="submitBtn"
+                        type="submit"
+                        class="w-full rounded-xl bg-white py-3 font-semibold text-neutral-900 hover:bg-neutral-200"
+                      >
+                        Send Message
+                      </button>
+                    </form>
+
+                    <div
+                      id="formSuccess"
+                      class="hidden text-center text-white space-y-4"
+                    >
+                      <div class="text-4xl">✔</div>
+                      <h3 class="text-xl font-semibold">
+                        Message sent successfully
+                      </h3>
+                      <p class="text-neutral-400">
+                        Thank you for contacting ETIOS. We will get back to you
+                        soon.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./JavaScript/email.js" defer></script>
+    <script src="JavaScript/background.js"></script>
+  </body>
+</html>

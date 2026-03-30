@@ -1,0 +1,18 @@
+{
+  "name": "etios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "dev:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/output.css --watch",
+  "build:css": "npx @tailwindcss/cli -i ./css/styles.css -o ./css/output.css --minify"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
