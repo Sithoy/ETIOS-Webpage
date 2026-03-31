@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ETIOS</title>
     <link rel="stylesheet" href="./css/output.css" />
-    <style>           
+    <style>
       #network-bg {
         position: absolute;
         inset: 0;
@@ -13,10 +13,26 @@
         height: 100%;
         z-index: 0;
         background:
-          radial-gradient(circle at 50% 18%, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.82) 24%, rgba(248,250,252,0.65) 40%, rgba(248,250,252,0.35) 55%, rgba(248,250,252,0.12) 68%, rgba(248,250,252,0) 78%),
+          radial-gradient(
+            circle at 50% 18%,
+            rgba(255, 255, 255, 0.92) 0%,
+            rgba(248, 250, 252, 0.82) 24%,
+            rgba(248, 250, 252, 0.65) 40%,
+            rgba(248, 250, 252, 0.35) 55%,
+            rgba(248, 250, 252, 0.12) 68%,
+            rgba(248, 250, 252, 0) 78%
+          ),
           linear-gradient(to bottom, #f8fafc 0%, #f8fafc 68%, #ffffff 100%);
       }
-      .hero-shell { position: relative; z-index: 1; }
+      .hero-shell {
+        position: relative;
+        z-index: 1;
+      }
+      @media (max-width: 640px) {
+        canvas#network-bg {
+          filter: blur(0.5px);
+        }
+      }
     </style>
   </head>
   <body class="bg-white text-slate-900">
@@ -24,11 +40,18 @@
       <canvas id="network-bg"></canvas>
 
       <header class="absolute inset-x-0 top-0 z-50">
-        <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+        <nav
+          aria-label="Global"
+          class="flex items-center justify-between p-6 lg:px-8"
+        >
           <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">ETIOS</span>
-              <img src="images/logo.png" alt="ETIOS" class="h-15 w-auto bg-slate-800" />
+              <img
+                src="images/logo.png"
+                alt="ETIOS"
+                class="h-15 w-auto bg-slate-800"
+              />
             </a>
           </div>
 
@@ -40,17 +63,36 @@
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             >
               <span class="sr-only">Open main menu</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
-                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+                class="size-6"
+              >
+                <path
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
           </div>
 
           <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#services" class="text-sm/6 font-semibold text-gray-900">Services</a>
-            <a href="#solutions" class="text-sm/6 font-semibold text-gray-900">Solutions</a>
-            <a href="#about" class="text-sm/6 font-semibold text-gray-900">About</a>
-            <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contact</a>
+            <a href="#services" class="text-sm/6 font-semibold text-gray-900"
+              >Services</a
+            >
+            <a href="#solutions" class="text-sm/6 font-semibold text-gray-900"
+              >Solutions</a
+            >
+            <a href="#about" class="text-sm/6 font-semibold text-gray-900"
+              >About</a
+            >
+            <a href="#contact" class="text-sm/6 font-semibold text-gray-900"
+              >Contact</a
+            >
           </div>
 
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -62,11 +104,17 @@
 
         <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
           <div tabindex="0" class="fixed inset-0 focus:outline-none">
-            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div
+              class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+            >
               <div class="flex items-center justify-between">
                 <a href="#" class="-m-1.5 p-1.5">
                   <span class="sr-only">ETIOS</span>
-                  <img src="images/logo.png" alt="ETIOS" class="h-10 w-auto bg-slate-800" />
+                  <img
+                    src="images/logo.png"
+                    alt="ETIOS"
+                    class="h-10 w-auto bg-slate-800"
+                  />
                 </a>
                 <button
                   type="button"
@@ -75,8 +123,19 @@
                   class="-m-2.5 rounded-md p-2.5 text-gray-700"
                 >
                   <span class="sr-only">Close menu</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
-                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    aria-hidden="true"
+                    class="size-6"
+                  >
+                    <path
+                      d="M6 18 18 6M6 6l12 12"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </button>
               </div>
@@ -84,13 +143,33 @@
               <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                   <div class="space-y-2 py-6">
-                    <a href="#services" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Services</a>
-                    <a href="#solutions" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Solutions</a>
-                    <a href="#about" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
-                    <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact</a>
+                    <a
+                      href="#services"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      >Services</a
+                    >
+                    <a
+                      href="#solutions"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      >Solutions</a
+                    >
+                    <a
+                      href="#about"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      >About</a
+                    >
+                    <a
+                      href="#contact"
+                      class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      >Contact</a
+                    >
                   </div>
                   <div class="py-6">
-                    <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Contact Us</a>
+                    <a
+                      href="#contact"
+                      class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                      >Contact Us</a
+                    >
                   </div>
                 </div>
               </div>
@@ -102,20 +181,31 @@
       <section class="hero-shell relative isolate px-6 pt-14 lg:px-8">
         <div class="mx-auto max-w-3xl py-20 sm:py-28 lg:py-32">
           <div class="text-center">
-            <h1 class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
+            <h1
+              class="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl"
+            >
               ETIOS
             </h1>
-            <h2 class="mt-2 text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
+            <h2
+              class="mt-2 text-3xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl"
+            >
               Engineering Technology &amp;<br class="hidden sm:block" />
               Intelligent Operations Solutions
             </h2>
 
-            <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-              Helping organizations transform operations through data, automation and modern engineering technologies.
+            <p
+              class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+            >
+              Helping organizations transform operations through data,
+              automation and modern engineering technologies.
             </p>
 
-            <p class="mx-auto mt-8 max-w-2xl text-base text-gray-700 sm:text-lg">
-              ETIOS supports organizations seeking stronger operational performance through modern engineering technologies and intelligent data systems.
+            <p
+              class="mx-auto mt-8 max-w-2xl text-base text-gray-700 sm:text-lg"
+            >
+              ETIOS supports organizations seeking stronger operational
+              performance through modern engineering technologies and
+              intelligent data systems.
             </p>
 
             <div class="mt-10 flex items-center justify-center gap-x-6">
@@ -134,84 +224,135 @@
     <div class="h-14 bg-gradient-to-b from-slate-50 to-white"></div>
 
     <section id="services" class="relative z-10 bg-white py-20">
-  <div class="max-w-6xl mx-auto px-6">
-    
-    <div class="max-w-3xl mx-auto text-center mb-14">
-      <p class="text-sm font-semibold tracking-[0.18em] uppercase text-slate-500 mb-4">
-        What We Do
-      </p>
-      <h2 class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 mb-5">
-        Technology solutions designed around operational performance
-      </h2>
-      <p class="text-lg text-slate-600 leading-8">
-        ETIOS combines engineering understanding with modern digital capabilities to help organizations improve reliability, visibility, and execution.
-      </p>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-3">
-      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h3 class="text-2xl font-semibold text-slate-900 mb-4">DevOps & Cloud Engineering</h3>
-        <p class="text-slate-600 leading-8">
-          Cloud-ready environments, deployment workflows, and automation practices that improve delivery speed and reliability.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h3 class="text-2xl font-semibold text-slate-900 mb-4">Business Intelligence & Analytics</h3>
-        <p class="text-slate-600 leading-8">
-          Reporting, dashboards, and data visibility that help organizations make better operational and strategic decisions.
-        </p>
-      </div>
-
-      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h3 class="text-2xl font-semibold text-slate-900 mb-4">Industrial Digitalization</h3>
-        <p class="text-slate-600 leading-8">
-          Engineering-focused technology solutions that connect equipment, workflows, and operational systems with modern digital tools.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-    <section id="solutions" class="relative z-10 bg-slate-50 py-18">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid gap-8 md:grid-cols-2">
-          <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-xs">
-            <p class="text-sm font-semibold text-gray-700">Why ETIOS</p>
-            <h3 class="mt-2 text-2xl font-semibold text-gray-900">Technology grounded in operational reality</h3>
-            <p class="mt-4 text-sm leading-6 text-gray-700">
-              ETIOS combines engineering awareness, operational insight, and modern digital thinking to support organizations that need practical, high-value technology solutions.
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <p
+            class="text-sm font-semibold tracking-[0.18em] uppercase text-slate-500 mb-4"
+          >
+            What We Do
+          </p>
+          <h2
+            class="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900 mb-5"
+          >
+            Technology solutions designed around operational performance
+          </h2>
+          <p class="text-lg text-slate-600 leading-8">
+            ETIOS combines engineering understanding with modern digital
+            capabilities to help organizations improve reliability, visibility,
+            and execution.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div
+            class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+          >
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">
+              DevOps & Cloud Engineering
+            </h3>
+            <p class="text-slate-600 leading-8">
+              Cloud-ready environments, deployment workflows, and automation
+              practices that improve delivery speed and reliability.
             </p>
           </div>
 
-          <div id="about" class="rounded-2xl border border-slate-200 bg-white p-8 shadow-xs">
-            <p class="text-sm font-semibold text-gray-700">Approach</p>
-            <h3 class="mt-2 text-2xl font-semibold text-gray-900">Built for organizations improving performance</h3>
+          <div
+            class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+          >
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">
+              Business Intelligence & Analytics
+            </h3>
+            <p class="text-slate-600 leading-8">
+              Reporting, dashboards, and data visibility that help organizations
+              make better operational and strategic decisions.
+            </p>
+          </div>
+
+          <div
+            class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
+          >
+            <h3 class="text-2xl font-semibold text-slate-900 mb-4">
+              Industrial Digitalization
+            </h3>
+            <p class="text-slate-600 leading-8">
+              Engineering-focused technology solutions that connect equipment,
+              workflows, and operational systems with modern digital tools.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="solutions" class="relative z-10 bg-slate-50 py-18">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div
+            class="rounded-2xl border border-slate-200 bg-white p-8 shadow-xs"
+          >
+            <p class="text-sm font-semibold text-gray-700">Why ETIOS</p>
+            <h3 class="mt-2 text-2xl font-semibold text-gray-900">
+              Technology grounded in operational reality
+            </h3>
             <p class="mt-4 text-sm leading-6 text-gray-700">
-              We focus on solutions that strengthen visibility, automation, and decision-making, with an emphasis on reliability, scalability, and measurable operational improvement.
+              ETIOS combines engineering awareness, operational insight, and
+              modern digital thinking to support organizations that need
+              practical, high-value technology solutions.
+            </p>
+          </div>
+
+          <div
+            id="about"
+            class="rounded-2xl border border-slate-200 bg-white p-8 shadow-xs"
+          >
+            <p class="text-sm font-semibold text-gray-700">Approach</p>
+            <h3 class="mt-2 text-2xl font-semibold text-gray-900">
+              Built for organizations improving performance
+            </h3>
+            <p class="mt-4 text-sm leading-6 text-gray-700">
+              We focus on solutions that strengthen visibility, automation, and
+              decision-making, with an emphasis on reliability, scalability, and
+              measurable operational improvement.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <footer id="contact" class="relative z-10 bg-slate-950 text-slate-300 py-14 border-t border-slate-800">
+    <footer
+      id="contact"
+      class="relative z-10 bg-slate-950 text-slate-300 py-14 border-t border-slate-800"
+    >
       <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
             <h3 class="text-white text-lg font-semibold mb-3">ETIOS</h3>
             <p class="text-sm leading-6">
-              Engineering Technology &amp; Intelligent Operations Solutions for organizations seeking stronger operational performance through technology, analytics, and automation.
+              Engineering Technology &amp; Intelligent Operations Solutions for
+              organizations seeking stronger operational performance through
+              technology, analytics, and automation.
             </p>
           </div>
 
           <div>
             <h3 class="text-white text-lg font-semibold mb-3">Navigation</h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="#services" class="hover:text-white transition">Services</a></li>
-              <li><a href="#solutions" class="hover:text-white transition">Solutions</a></li>
-              <li><a href="#about" class="hover:text-white transition">About</a></li>
-              <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+              <li>
+                <a href="#services" class="hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#solutions" class="hover:text-white transition"
+                  >Solutions</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-white transition">About</a>
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -219,14 +360,19 @@
             <h3 class="text-white text-lg font-semibold mb-3">Contact</h3>
             <p class="text-sm leading-6">Maputo, Mozambique</p>
             <p class="text-sm leading-6">
-              <a href="mailto:contact@etios.net" class="hover:text-white transition">
+              <a
+                href="mailto:contact@etios.net"
+                class="hover:text-white transition"
+              >
                 contact@etios.net
               </a>
             </p>
           </div>
         </div>
 
-        <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+        <div
+          class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500"
+        >
           © 2026 ETIOS. All rights reserved.
         </div>
       </div>
@@ -236,7 +382,9 @@
       id="contactModal"
       class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 px-4"
     >
-      <div class="relative w-full max-w-2xl rounded-2xl border border-white/10 bg-neutral-900 shadow-2xl">
+      <div
+        class="relative w-full max-w-2xl rounded-2xl border border-white/10 bg-neutral-900 shadow-2xl"
+      >
         <button
           id="closeContactModal"
           class="absolute right-4 top-4 text-2xl text-neutral-400 hover:text-white"
@@ -254,7 +402,11 @@
             method="POST"
             class="space-y-6"
           >
-            <input type="hidden" name="_subject" value="New inquiry from ETIOS website" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New inquiry from ETIOS website"
+            />
             <input type="text" name="_gotcha" class="hidden" />
 
             <input
